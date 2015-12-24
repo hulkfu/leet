@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/leet'
+
+if ARGV.count != 1
+  puts "With the given string to leet."
+  puts 'usage: leet "I Love Ruby!"'
+  exit
+end
+
+puts ARGV[0].leet
