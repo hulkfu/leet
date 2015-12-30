@@ -1,11 +1,16 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/leet'
+$:.unshift(File.expand_path("../../lib", __FILE__))
 
-if ARGV.count != 1
-  puts "With the given string to leet."
-  puts 'usage: leet "I Love Ruby!"'
+require 'leet'
+
+if ARGV.count == 1
+  puts ARGV[0].leet
+elsif ARGV.count == 2 && ARGV[0] == "-u"
+  puts  ARGV[1].unleet
+else
+  puts "With the given string to leet or ."
+  puts 'leet usage: leet "I Love Ruby!"'
+  puts 'unleet usage: leet -u "| []_[]\|£ /2(_)P>Ч!"'
   exit
 end
-
-puts ARGV[0].leet
